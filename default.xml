@@ -787,4 +787,8 @@
   <!-- CarbonROM -->
   <include name="carbon-default.xml" />
 
+  <!-- Tesla -->
+  <include name="tesla-default.xml" />
+
+
 </manifest>
