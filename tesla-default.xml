@@ -7,6 +7,45 @@
            sync-c="true"
            sync-j="8" />
 
+  <project path="bionic" name="android_bionic" groups="pdk" remote="tesla" />
+  <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="tesla" />
 
+  <project path="build/make" name="tesla_build" groups="pdk" remote="tesla">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="tesla" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
 
+  <project path="external/tinycompress" name="external_tinycompress" groups="pdk" remote="tesla" />
+
+  <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="tesla" />
+  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="tesla" />
+  <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="tesla" />
+  <project path="frameworks/rs" name="frameworks_rs" groups="pdk" remote="tesla" />
+
+  <project path="hardware/interfaces" name="hardware_interfaces" groups="pdk" remote="tesla" />
+  <project path="hardware/lineage/interfaces" name="hardware_lineage_interfaces" remote="tesla" />
+  <project path="hardware/qcom/bt" name="hardware_qcom_bt" groups="qcom,pdk" remote="tesla" />
+  <project path="hardware/qcom/display" name="hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="tesla" />
+
+  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="tesla" />
+  <project path="packages/apps/TeslaSetupWizard" name="packages_apps_TeslaSetupWizard" remote="tesla" />
+  <project path="packages/apps/TeslaCoil" name="packages_apps_TeslaCoil" remote="tesla" />
+
+  <project path="prebuilts/clang/host/linux-x86" name="prebuilts_clang_host_linux-x86" remote="tesla" />
+
+  <project path="system/core" name="system_core" groups="pdk" remote="tesla" />
+  <project path="system/vold" name="system_vold" groups="pdk" remote="tesla" />
+
+  <project path="vendor/codeaurora/telephony" name="vendor_codeaurora_telephony" remote="tesla" />
+  <project path="vendor/qcom/opensource/data-ipa-cfg-mgr" name="vendor_qcom_opensource_data-ipa-cfg-mgr" remote="tesla" groups="qcom,pdk-qcom" />
+  <project path="vendor/tesla" name="vendor_tesla" remote="tesla" />
+  <project path="vendor/themes" name="vendor_themes" remote="tesla" />
 </manifest>
